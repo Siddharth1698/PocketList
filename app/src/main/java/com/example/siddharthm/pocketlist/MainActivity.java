@@ -15,7 +15,9 @@ public class MainActivity extends AppCompatActivity {
     EditText t1;
     Button add;
     Button clear;
+    Button clearList;
     ListView list;
+    
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         t1 = (EditText) findViewById(R.id.editText);
         add = (Button)findViewById(R.id.button2);
+        clearList = (Button)findViewById(R.id.button3);
         clear = (Button)findViewById(R.id.button);
         list = (ListView)findViewById(R.id.list);
         final ArrayAdapter<String> itemsAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1);
@@ -40,6 +43,22 @@ public class MainActivity extends AppCompatActivity {
                 t1.setText("");
             }
         });
+        clearList.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                        itemsAdapter.clear();
+               list.setAdapter(itemsAdapter);
+            }
+        });
+        list.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                itemsAdapter.remove(String.valueOf(0));
+                return true;
+            }
+        });
+
 
     }
+
 }
