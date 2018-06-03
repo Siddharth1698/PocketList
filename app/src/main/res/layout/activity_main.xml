@@ -25,26 +25,31 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <Button
-                android:id="@+id/button2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="ADD" />
+            <android.support.v7.widget.GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-            <Button
-                android:id="@+id/button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="CLEAR" />
+                <Button
+                    android:id="@+id/button2"
+                    android:layout_width="192dp"
+                    android:layout_height="wrap_content"
+                    android:text="Add" />
+
+                <Button
+                    android:id="@+id/button"
+                    android:layout_width="191dp"
+                    android:layout_height="wrap_content"
+                    android:text="Clear" />
+            </android.support.v7.widget.GridLayout>
         </LinearLayout>
     </LinearLayout>
 
     <ListView
         android:id="@+id/list"
         android:layout_width="match_parent"
-        android:layout_height="326dp"></ListView>
+        android:layout_height="326dp">
+
+    </ListView>
 
     <Button
         android:id="@+id/button3"
