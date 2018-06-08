@@ -37,7 +37,6 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 itemsAdapter.add(t1.getText().toString());
                 list.setAdapter(itemsAdapter);
-
             }
         });
         clear.setOnClickListener(new View.OnClickListener() {
